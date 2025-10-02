@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Login Page -->
+  <section id="loginSection" class="card login-card">
+    <h1>🎓 Student Portal Login</h1>
+    <input type="text" id="studentNumberLogin" placeholder="Student Number">
+    <input type="password" id="passwordLogin" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p>Don't have an account? <a href="#" onclick="showSignup()">Sign Up</a></p>
+  </section>
+
+  <!-- Sign Up Page -->
+  <section id="signupSection" class="card login-card hidden">
+    <h1>📝 Student Sign Up</h1>
+    <input type="text" id="signupStudentNumber" placeholder="Student Number">
+    <input type="text" id="signupName" placeholder="Full Name">
+    <input type="email" id="signupEmail" placeholder="Email">
+    <input type="password" id="signupPassword" placeholder="Password">
+    <button onclick="signup()">Register</button>
+    <p>Already have an account? <a href="#" onclick="showLogin()">Back to Login</a></p>
+  </section>
+
+  <!-- Dashboard -->
+  <section id="dashboard" class="hidden">
+    <!-- Header -->
+    <header class="header">
+      <h1>📚 Student Portal</h1>
+      <div class="tuition-control">
+        <label>Tuition Category: </label>
+        <select id="tuitionType" onchange="updateTuitionCategory()">
+          <option value="cash">Cash</option>
+          <option value="installment">Installment</option>
+        </select>
+        <span id="tuitionDisplay">Cash</span>
+      </div>
+      <button class="logout" onclick="logout()">Logout</button>
+    </header>
+
+    <!-- Main layout -->
+    <div class="main-layout">
+      <!-- Sidebar -->
+      <nav class="sidebar">
+        <button onclick="showSection('profile')">👤 Profile</button>
+        <button onclick="showSection('courses')">📖 Courses</button>
+        <button onclick="showSection('ledger')">📊 Ledger</button>
+        <button onclick="showSection('announcements')">📢 Announcements</button>
+      </nav>
+
+      <!-- Content area -->
+      <div class="content">
+        <!-- Profile -->
+        <section id="profile" class="hidden card">
+          <h2>👤 Student Profile</h2>
+          <label>Student Number: <input type="text" id="studentNumber" readonly></label>
+          <label>Name: <input type="text" id="studentName"></label>
+          <label>Email: <input type="email" id="studentEmail"></label>
+          <button onclick="saveProfile()">Save Profile</button>
+          <p id="profileMsg"></p>
+        </section>
+
+        <!-- Courses -->
+        <section id="courses" class="hidden card">
+          <h2>📖 Courses</h2>
+          <ul id="courseList"></ul>
+          <input type="text" id="courseName" placeholder="Course Name">
+          <input type="text" id="subjectName" placeholder="Subject">
+          <input type="number" id="courseUnits" placeholder="Units">
+          <button onclick="addCourse()">Add Course</button>
+        </section>
+
+        <!-- Ledger -->
+        <section id="ledger" class="hidden card">
+          <h2>📊 Ledger</h2>
+          <ul id="ledgerList"></ul>
+          <p><b>Total Balance:</b> <span id="ledgerBalance">0</span></p>
+
+          <input type="text" id="transactionDesc" placeholder="Description">
+          <input type="number" id="transactionAmount" placeholder="Amount (+/-)">
+          <select id="transactionCategory">
+            <option value="Tuition">Tuition</option>
+            <option value="Allowance">Allowance</option>
+            <option value="Food">Food</option>
+            <option value="Miscellaneous">Miscellaneous</option>
+          </select>
+          <button onclick="addTransaction()">Add Transaction</button>
+        </section>
+
+        <!-- Announcements -->
+        <section id="announcements" class="hidden card">
+          <h2>📢 Announcements</h2>
+          <ul>
+            <li>Welcome to the new Student Portal!</li>
+            <li>Final exams start next month.</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

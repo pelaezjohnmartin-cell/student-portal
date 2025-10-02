@@ -1,0 +1,137 @@
+/* General */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #f0f2f8;
+    margin: 0;
+    color: #333;
+  }
+  
+  /* Login Page Center */
+  #loginSection, #signupSection {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    text-align: center;
+  }
+  
+  /* Hide by default */
+  .hidden {
+    display: none;
+  }
+  
+  .card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  /* Dashboard Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    background: #007BFF;
+    color: white;
+  }
+  
+  .header h1 { margin: 0; }
+  
+  .tuition-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logout {
+    background: #dc3545;
+    border: none;
+    padding: 8px 14px;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .logout:hover { background: #a71d2a; }
+  
+  /* Main Layout (Landscape style for dashboard) */
+  .main-layout {
+    display: flex;
+    height: calc(100vh - 80px);
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    background: #fff;
+    padding: 20px;
+    min-width: 200px;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .sidebar button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .sidebar button:hover {
+    background: #1e7e34;
+  }
+  
+  /* Content Area */
+  .content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+  }
+  
+  /* Ledger Items */
+  .ledger-item {
+    background: #f1f3f6;
+    padding: 12px;
+    margin: 8px 0;
+    border-left: 5px solid #28a745;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .ledger-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ledger-category {
+    font-size: 12px;
+    color: #555;
+  }
+  
+  .delete-btn {
+    background: red;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .delete-btn:hover { background: darkred; }
+  
+  input, select, button {
+    margin: 8px 0;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 400px;
+  }
+  
